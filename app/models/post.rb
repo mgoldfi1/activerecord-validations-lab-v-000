@@ -2,7 +2,7 @@
 
 class MyValidator < ActiveModel::Validator
   def validate(record)
-    unless record.name.starts_with? 'X'
+    unless record.title.includes?(w%("Won't Believe" "Secret" "Top" "Guess"))
       record.errors[:name] << 'Need a name starting with X please!'
     end
   end

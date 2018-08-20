@@ -15,7 +15,7 @@ validate :is_clickbait?
     #binding.pry
     if self.title
   cb = ["Won't Believe", "Top", "Guess", "Secret"]
-    cb.any? {|x| self.title.include?(x)}
+    !cb.any? {|x| self.title.include?(x)}
     end
   end
 

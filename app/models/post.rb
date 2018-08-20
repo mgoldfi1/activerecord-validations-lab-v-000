@@ -1,8 +1,8 @@
 
 
 class MyValidator < ActiveModel::Validator
-  def validate(title)
-    unless title.include?("Won't Believe")
+  def validate(post)
+    unless post.title.include?("Won't Believe")
       record.errors[:title] << 'Need a  clickbait title'
     end
   end

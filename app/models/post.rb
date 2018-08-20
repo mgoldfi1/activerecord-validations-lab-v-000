@@ -17,6 +17,8 @@ validate :is_clickbait?
   cb = ["Won't Believe", "Top", "Guess", "Secret"]
     if cb.any? {|x| self.title.include?(x)}
       true
+    else
+      false
     end
     end
   end

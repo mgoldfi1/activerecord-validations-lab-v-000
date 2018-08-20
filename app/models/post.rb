@@ -15,7 +15,7 @@ validate :is_clickbait?
     #binding.pry
     if self.title
   cb = [/Won't Believe/i,/Top [0-9]*/i,/Guess/i,/Secret/i]
-  cb.none? {|x| self.title.include?(x)}
+  cb.none? {|x| x.match(self.title)}
     end
   end
 

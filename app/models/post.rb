@@ -12,11 +12,10 @@ class Post < ActiveRecord::Base
 
 validate :is_clickbait?
   def is_clickbait?
-    #binding.pry
-    if self.title
   cb = [/Won't Believe/i,/Top [0-9]*/i,/Guess/i,/Secret/i]
-    cb.any? {|x| x.match(self.title)}
-    end
+  if cb.none? {|x| x.match(self.title)}
+    binding.pry
+  end
   end
 
 

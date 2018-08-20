@@ -8,9 +8,10 @@ class Post < ActiveRecord::Base
   validates :summary, length: {maximum: 250}
   validates :category, inclusion: { in: %w(Fiction Non-Fiction)}
 
-  cb = ["Won't Believe", "Top", "Guess", "Secret"]
+  
 
   def is_clickbait?
+  cb = ["Won't Believe", "Top", "Guess", "Secret"]
   cb.any? {|x| self.title.include?(x)}
   end
 

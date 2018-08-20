@@ -1,6 +1,6 @@
 
 
-
+require 'pry'
 
 class Post < ActiveRecord::Base
 
@@ -13,6 +13,7 @@ class Post < ActiveRecord::Base
 
 
   def is_clickbait?
+    binding.pry
   cb = ["Won't Believe", "Top", "Guess", "Secret"]
   cb.any? {|x| self.title.include?(x)}
   end
